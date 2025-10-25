@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - OTP Service</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1><i class="fas fa-user-shield"></i> Panel Admin</h1>
+        </header>
+
+        <main class="admin-main">
+            <!-- Kolom Manajemen Nomor -->
+            <div class="card">
+                <h2>Manajemen Nomor</h2>
+                <div class="add-number-form">
+                    <input type="text" id="newNumberInput" placeholder="Masukkan nomor baru (e.g., 0812...)">
+                    <button id="addNumberBtn">Tambah Nomor</button>
+                </div>
+                <h3>Nomor Tersedia</h3>
+                <ul id="availableNumbersList">
+                    <!-- Nomor yang tersedia akan muncul di sini -->
+                    <li>081234567890 <button class="delete-btn">Hapus</button></li>
+                    <li>085711112222 <button class="delete-btn">Hapus</button></li>
+                </ul>
+            </div>
+
+            <!-- Kolom Order Aktif -->
+            <div class="card">
+                <h2><i class="fas fa-hourglass-half"></i> Order Aktif (Menunggu Input OTP)</h2>
+                <table id="active-orders-table">
+                    <thead>
+                        <tr>
+                            <th>Layanan</th>
+                            <th>Nomor</th>
+                            <th>Input Kode OTP</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminActiveOrders">
+                        <!-- SIMULASI: Order baru akan muncul di sini saat user memesan -->
+                        <!-- Contoh baris order -->
+                        <tr data-order-id="1">
+                            <td>WhatsApp</td>
+                            <td>081234567890</td>
+                            <td><input type="text" class="otp-input" placeholder="Masukkan kode..."></td>
+                            <td><button class="send-otp-btn">Kirim OTP</button></td>
+                        </tr>
+                         <tr data-order-id="2">
+                            <td>Google</td>
+                            <td>085711112222</td>
+                            <td><input type="text" class="otp-input" placeholder="Masukkan kode..."></td>
+                            <td><button class="send-otp-btn">Kirim OTP</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
