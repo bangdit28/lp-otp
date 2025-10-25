@@ -1,0 +1,130 @@
+:root {
+    --bg-dark: #2c3e50;
+    --bg-light: #34495e;
+    --primary: #1abc9c;
+    --text-primary: #ecf0f1;
+    --border-color: #4a627a;
+    --danger: #e74c3c;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+}
+
+.admin-container header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.admin-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Form Tambah Nomor */
+.add-number-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#newNumberInput {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+#addNumberBtn {
+    padding: 10px 15px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#addNumberBtn:hover { background-color: #16a085; }
+
+/* Daftar Nomor */
+#availableNumbersList {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+#availableNumbersList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.delete-btn {
+    background-color: var(--danger);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tabel Order Aktif */
+#active-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#active-orders-table th, #active-orders-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.otp-input {
+    width: 150px;
+    padding: 8px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 1.1rem;
+}
+.send-otp-btn {
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.send-otp-btn:hover { background-color: #2980b9; }
+
+@media (max-width: 900px) {
+    .admin-main {
+        grid-template-columns: 1fr;
+    }
+}
